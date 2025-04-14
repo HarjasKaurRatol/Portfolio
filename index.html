@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harjas Kaur Ratol - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+      AOS.init();
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="font-poppins dark:bg-gray-900 dark:text-gray-100 bg-gradient-to-b from-gray-50 to-gray-200 text-gray-800">
+<!-- Initial Navbar (visible by default) -->
+<nav id="navbarInitial" class="w-full fixed top-0 left-0 z-40  bg-white/10 backdrop-blur-lg text-white transition-all duration-700 ease-in-out">
+  <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center border-b border-white">
+    <!-- Left: Menu toggle -->
+    <button class="menu-toggle flex items-center space-x-2 text-sm uppercase">
+      <i class="fas fa-bars text-xl"></i>
+      <span>Menu</span>
+    </button>
+  
+    <!-- Center: Logo -->
+    <div class="text-xl tracking-wider uppercase tracking-widest">HARJAS KAUR Ratol</div>
+
+    <!-- Right: Action link -->
+    <button class="open-drawer items-center space-x-2 text-sm uppercase">
+      <i class="fa fa-phone" aria-hidden="true"></i>
+      <span>CONTACT</span>
+    </button>
+    </a>
+  </div>
+</nav>
+
+<!-- Scrolled Navbar (hidden at first, slides in on scroll) -->
+<nav id="navbarScrolled" class="w-full fixed top-0 left-0 z-50  bg-white/10 backdrop-blur-md text-white shadow-md transform -translate-y-full transition-transform duration-700 ease-in-out">
+  <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center ">
+    <!-- Left: Menu toggle -->
+    <button  class="menu-toggle flex items-center space-x-2 text-sm uppercase">
+      <i class="fas fa-bars text-xl"></i>
+      <span>Menu</span>
+    </button>
+  
+    <!-- Center: Logo -->
+    <div class="flex items-center justify-center">
+      <img src="/assets/images/4.png" alt="Logo" class="h-14 w-auto" />
+    </div>
+
+    <!-- Right: Action link -->
+    <button class="open-drawer flex items-center space-x-2 text-sm uppercase">
+      <i class="fa fa-phone" aria-hidden="true"></i>
+      <span>CONTACT</span>
+    </button>
+    </a>
+  </div>
+</nav>
+
+  <!-- Sidebar Menu -->
+  <aside id="sidebar" class="fixed top-0 left-0 w-96 h-full bg-white/10 backdrop-blur-lg text-white p-6 transform -translate-x-full z-50">
+    <!-- Close Button inside Sidebar -->
+    <div class="flex justify-end mb-4">
+      <button id="close-menu" class="text-white text-2xl">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <nav class="space-y-4 text-right tracking-widest uppercase">
+      <a href="#hero" class="block hover:font-bold pr-10">About</a>
+      <a href="#skills" class="block hover:font-bold pr-10">Skills</a>
+      <a href="#experience" class="block hover:font-bold pr-10">Experience</a>
+      <a href="#projects" class="block hover:font-bold pr-10">Projects</a>
+    </nav>
+  </aside>
+  
+  <!-- Fullscreen Contact Drawer -->
+  <div id="bottomDrawer" class="fixed inset-0 z-50 bg-[#1b1025] text-white transform translate-y-full transition-transform duration-500 ease-in-out">
+    <div class="relative w-full h-full flex flex-col items-center justify-center px-6 text-center">
+  
+      <!-- Close Button -->
+      <button id="closeDrawer" class="absolute top-6 right-6 border-2 border-white rounded-full w-10 h-10 flex items-center justify-center text-xl hover:bg-white hover:text-black transition">
+        &times;
+      </button>
+  
+      <!-- Contact Content -->
+      <h1 class="text-4xl font-light mb-6">Let's Connect</h1>
+      <p class="text-gray-300 mb-10 max-w-lg">
+        Feel free to reach out to me through any of the platforms below. I'm always open to collaborating or chatting!
+      </p>
+  
+      <p class="text-gray-400 text-sm mb-10">
+        Based in Tempe, Arizona • Open to remote or hybrid opportunities<br />
+        Prefer email or LinkedIn for quick responses.<br />
+        Available for internship roles.
+      </p>
+
+ <!-- Contact Icons -->
+  <div class="flex space-x-10 text-4xl">
+    <a href="https://github.com/harjaskaurratol" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">
+     <i class="fab fa-github"></i>
+    </a>
+   <a href="https://www.linkedin.com/in/harjaskaurratol/" target="_blank" rel="noopener noreferrer" class="hover:text-purple-400 transition">
+    <i class="fab fa-linkedin"></i>
+    </a>
+     <a href="mailto:hratol@asu.edu" class="hover:text-purple-400 transition">
+        <i class="fas fa-envelope"></i>
+         </a>
+        </div>
+    </div>
+  </div>
+
+  <!-- Hero Section Split into Two Blocks -->
+  <section id="hero" class="relative pt-16 w-full min-h-screen bg-black text-white flex items-center justify-center">
+    <div class="absolute inset-0 bg-fuchsia-900/60 backdrop-blur-sm"></div>
+    <div class="relative max-w-7xl mx-auto px-6 py-40 flex flex-col lg:flex-row items-center justify-between gap-16 z-10">
+      <!-- Profile Image Block on Left -->
+      <div class="w-full lg:w-1/2 flex justify-center lg:justify-start">
+        <div class="w-72 h-72 rounded-full overflow-hidden shadow-lg border-4 border-neutral-950">
+          <img src="/assets/images/p1.png" alt="Profile Picture" class="w-full h-full object-cover">
+        </div>
+      </div>
+  
+      <!-- Text Content Block on Right -->
+      <div class="w-full lg:w-1/2 text-center lg:text-left">
+        <h1 class="text-5xl font-extrabold leading-tight mb-6">Hi, I'm <span class="text-amber-300">Harjas Kaur Ratol</span></h1>
+        <p class="text-lg text-white/90 mb-8 max-w-xl">A passionate Software Engineering graduate student at Arizona State University who loves crafting clean code, intuitive UI/UX, and engaging digital experiences.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <a href="#projects" class="bg-amber-400 text-fuchsia-950 font-semibold px-6 py-3 rounded-full shadow hover:bg-amber-300 transition">View Projects</a>
+          <a href="#experience" class="border border-white text-white px-6 py-3 rounded-full hover:bg-white hover:text-fuchsia-900 transition">View Experience</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+      <!-- Skills Section -->
+  <section id="skills" class="bg-[#1b1025] py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl text-white text-center tracking-widest mb-4 uppercase">Skills</h2>
+      <p class="text-center text-gray-400 uppercase mb-12 text-sm">Click to explore projects</p>
+  
+      <!-- Tab Filters -->
+      <div class="flex justify-center mb-10 flex-wrap gap-2">
+        <button class="filter-btn active text-white border-b-2 border-white px-4 py-2" data-category="all">All</button>
+        <button class="filter-btn text-gray-400 hover:text-white px-4 py-2" data-category="frontend">Frontend</button>
+        <button class="filter-btn text-gray-400 hover:text-white px-4 py-2" data-category="backend">Backend</button>
+        <button class="filter-btn text-gray-400 hover:text-white px-4 py-2" data-category="tools">Tools</button>
+      </div>
+  
+      <!-- Skill Cards -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+        
+        <!-- Frontend Skills -->
+        <a href="https://github.com/harjaskaur/Front-end-ideas" target="_blank" data-category="frontend"
+          class="skill-card group p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 
+                 hover:border-white/20 hover:scale-105 transition-all duration-300 
+                 text-center cursor-pointer active:bg-orange-400/10 active:text-orange-300">
+          <i class="fab fa-html5 text-4xl text-orange-400 mb-4 group-hover:scale-110 transition-transform"></i>
+          <p class="font-semibold text-white">HTML5</p>
+        </a>
+  
+        <a href="https://your-css-project.com" target="_blank" data-category="frontend"
+          class="skill-card group p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 
+                 hover:border-white/20 hover:scale-105 transition-all duration-300 
+                 text-center cursor-pointer active:bg-blue-500/10 active:text-blue-300">
+          <i class="fab fa-css3-alt text-4xl text-blue-400 mb-4 group-hover:scale-110 transition-transform"></i>
+          <p class="font-semibold text-white">CSS3</p>
+        </a>
+  
+        <a href="https://your-js-project.com" target="_blank" data-category="frontend"
+          class="skill-card group p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 
+                 hover:border-white/20 hover:scale-105 transition-all duration-300 
+                 text-center cursor-pointer active:bg-yellow-400/10 active:text-yellow-300">
+          <i class="fab fa-js-square text-4xl text-yellow-300 mb-4 group-hover:scale-110 transition-transform"></i>
+          <p class="font-semibold text-white">JavaScript</p>
+        </a>
+  
+        <a href="https://github.com/harjaskaur/The-Wheel-Deal" target="_blank" data-category="frontend"
+          class="skill-card group p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 
+                 hover:border-white/20 hover:scale-105 transition-all duration-300 
+                 text-center cursor-pointer active:bg-cyan-500/10 active:text-cyan-300">
+          <i class="fab fa-react text-4xl text-cyan-400 mb-4 group-hover:scale-110 transition-transform"></i>
+          <p class="font-semibold text-white">React</p>
+        </a>
+  
+        <!-- Backend Skills -->
+        <a href="https://github.com/harjaskaur/ML-Movie-Recommendation-" target="_blank" data-category="backend"
+          class="skill-card group p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 
+                 hover:border-white/20 hover:scale-105 transition-all duration-300 
+                 text-center cursor-pointer active:bg-blue-400/10 active:text-blue-300">
+          <i class="fab fa-python text-4xl text-blue-300 mb-4 group-hover:scale-110 transition-transform"></i>
+          <p class="font-semibold text-white">Python</p>
+        </a>
+  
+        <a href="https://your-sql-project.com" target="_blank" data-category="backend"
+          class="skill-card group p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 
+                 hover:border-white/20 hover:scale-105 transition-all duration-300 
+                 text-center cursor-pointer active:bg-purple-600/10 active:text-purple-300">
+          <i class="fas fa-database text-4xl text-purple-400 mb-4 group-hover:scale-110 transition-transform"></i>
+          <p class="font-semibold text-white">SQL</p>
+        </a>
+  
+        <!-- Tools & Frameworks -->
+        <a href="https://your-tailwind-project.com" target="_blank" data-category="tools"
+          class="skill-card group p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 
+                 hover:border-white/20 hover:scale-105 transition-all duration-300 
+                 text-center cursor-pointer active:bg-gray-500/10 active:text-gray-300">
+          <i class="fas fa-code text-4xl text-gray-300 mb-4 group-hover:scale-110 transition-transform"></i>
+          <p class="font-semibold text-white">Tailwind CSS</p>
+        </a>
+  
+        <a href="https://www.figma.com/@harjas" target="_blank" data-category="tools"
+          class="skill-card group p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 
+                 hover:border-white/20 hover:scale-105 transition-all duration-300 
+                 text-center cursor-pointer active:bg-pink-500/10 active:text-pink-300">
+          <i class="fab fa-figma text-4xl text-pink-400 mb-4 group-hover:scale-110 transition-transform"></i>
+          <p class="font-semibold text-white">Figma</p>
+        </a>
+  
+      </div>
+    </div>
+  </section>
+  
+  <section id="soft-skills" class="bg-gradient-to-br from-[#1b1025] to-[#1a1a2e] py-20 text-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl tracking-widest uppercase text-center mb-12">Soft Skills</h2>
+  
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Communication -->
+        <div class="group bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-sm transition-all hover:scale-105 hover:border-white/20 duration-300">
+          <div class="flex items-center gap-4 mb-4">
+            <i class="fas fa-comments text-3xl text-amber-400"></i>
+            <h3 class="text-xl font-semibold">Communication</h3>
+          </div>
+          <p class="text-gray-300">Clear verbal & written communication across technical and non-technical teams.</p>
+        </div>
+  
+        <!-- Collaboration -->
+        <div class="group bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-sm transition-all hover:scale-105 hover:border-white/20 duration-300">
+          <div class="flex items-center gap-4 mb-4">
+            <i class="fas fa-people-arrows text-3xl text-green-400"></i>
+            <h3 class="text-xl font-semibold">Collaboration</h3>
+          </div>
+          <p class="text-gray-300">Worked cross-functionally in agile teams and contributed to group success through active participation.</p>
+        </div>
+  
+        <!-- Adaptability -->
+        <div class="group bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-sm transition-all hover:scale-105 hover:border-white/20 duration-300">
+          <div class="flex items-center gap-4 mb-4">
+            <i class="fas fa-sync-alt text-3xl text-cyan-400"></i>
+            <h3 class="text-xl font-semibold">Adaptability</h3>
+          </div>
+          <p class="text-gray-300">Easily adapts to new environments, tech stacks, and challenges in fast-paced settings.</p>
+        </div>
+  
+        <!-- Leadership -->
+        <div class="group bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-sm transition-all hover:scale-105 hover:border-white/20 duration-300">
+          <div class="flex items-center gap-4 mb-4">
+            <i class="fas fa-user-tie text-3xl text-indigo-400"></i>
+            <h3 class="text-xl font-semibold">Leadership</h3>
+          </div>
+          <p class="text-gray-300">Led team sprints, mentored peers, and made decisions confidently in collaborative environments.</p>
+        </div>
+  
+        <!-- Problem Solving -->
+        <div class="group bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-sm transition-all hover:scale-105 hover:border-white/20 duration-300">
+          <div class="flex items-center gap-4 mb-4">
+            <i class="fas fa-lightbulb text-3xl text-yellow-300"></i>
+            <h3 class="text-xl font-semibold">Problem Solving</h3>
+          </div>
+          <p class="text-gray-300">Approaches problems analytically and creatively to deliver reliable solutions under pressure.</p>
+        </div>
+  
+        <!-- Time Management -->
+        <div class="group bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-sm transition-all hover:scale-105 hover:border-white/20 duration-300">
+          <div class="flex items-center gap-4 mb-4">
+            <i class="fas fa-clock text-3xl text-pink-400"></i>
+            <h3 class="text-xl font-semibold">Time Management</h3>
+          </div>
+          <p class="text-gray-300">Balances multiple responsibilities and deadlines effectively using agile task management tools.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Projects Section -->
+  <section id="projects" class="bg-[#1b1025] py-20 text-white" x-data="{ activeTab: 'all', openIndex: null }">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl tracking-widest uppercase text-center mb-12">PROJECTS</h2>
+  
+      <!-- Tabs -->
+      <div class="flex justify-center gap-4 mb-10">
+        <button @click="activeTab = 'all'" :class="activeTab === 'all' ? 'text-amber-400 font-semibold' : 'text-gray-400'" class="uppercase text-sm tracking-widest">All</button>
+        <button @click="activeTab = 'frontend'" :class="activeTab === 'frontend' ? 'text-amber-400 font-semibold' : 'text-gray-400'" class="uppercase text-sm tracking-widest">Frontend</button>
+        <button @click="activeTab = 'ml'" :class="activeTab === 'ml' ? 'text-amber-400 font-semibold' : 'text-gray-400'" class="uppercase text-sm tracking-widest">ML</button>
+      </div>
+  
+      <!-- Project Cards -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div x-show="activeTab === 'all' || activeTab === 'backend'" class="bg-white/5 border border-white/10 rounded-xl backdrop-blur p-4 shadow group transition-all">
+          <img src="/assets/images/mlS.png" class="w-full h-48 object-cover rounded" alt="Python Project">
+          <div class="p-2 mt-3">
+            <h3 class="text-xl font-semibold mb-1">Stock Price Predictor</h3>
+            <p class="text-gray-300 text-sm mb-3">Predict stock prices using Linear Regression in Python.</p>
+            <div class="flex gap-4 mb-4 text-sm">
+              <!-- <a href="https://your-live-link.com" class="text-amber-400 hover:underline" target="_blank">Live</a> -->
+              <!-- <a href="https://github.com/yourusername/stock-price-predictor" class="text-gray-300 hover:underline" target="_blank">Code</a> -->
+            </div>
+            <button @click="openIndex === 2 ? openIndex = null : openIndex = 2" class="text-purple-300 hover:text-purple-400 text-sm">
+              <span x-show="openIndex !== 2">▶ More Details</span>
+              <span x-show="openIndex === 2">▼ Less Details</span>
+            </button>
+            <div x-show="openIndex === 2" x-transition class="text-gray-400 mt-3 text-sm space-y-1 overflow-hidden">
+              <ul class="list-disc ml-4">
+                <li>Uses pandas, matplotlib, scikit-learn</li>
+                <li>Performs feature engineering</li>
+                <li>Plots predicted vs actual prices</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project: Portfolio Website (Frontend) -->
+        <div x-show="activeTab === 'all' || activeTab === 'frontend'" class="bg-white/5 border border-white/10 rounded-xl backdrop-blur p-4 shadow group transition-all">
+          <img src="/assets/images/portfolio.png" class="w-full h-48 object-cover rounded" alt="">
+          <div class="p-2 mt-3">
+            <h3 class="text-xl font-semibold mb-1">Portfolio Website</h3>
+            <p class="text-gray-300 text-sm mb-3">Responsive portfolio with Tailwind and vanilla JS.</p>
+            <div class="flex gap-4 mb-4 text-sm">
+              <!-- <a href="https://your-live-link.com" class="text-amber-400 hover:underline" target="_blank">Live</a> -->
+
+            </div>
+            <button @click="openIndex === 1 ? openIndex = null : openIndex = 1" class="text-purple-300 hover:text-purple-400 text-sm">
+              <span x-show="openIndex !== 1">▶ More Details</span>
+              <span x-show="openIndex === 1">▼ Less Details</span>
+            </button>
+            <div x-show="openIndex === 1" x-transition class="text-gray-400 mt-3 text-sm space-y-1 overflow-hidden">
+              <ul class="list-disc ml-4">
+                <li>Built with Tailwind CSS & vanilla JS</li>
+                <li>Responsive on all screen sizes</li>
+                <li>Dark mode + tabbed structure</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Project: ML Disease Detection (ML) -->
+        <div x-show="activeTab === 'all' || activeTab === 'ml'" class="bg-white/5 border border-white/10 rounded-xl backdrop-blur p-4 shadow group transition-all">
+          <img src="/assets/images/ml.png" class="w-full h-48 object-cover rounded" alt="">
+          <div class="p-2 mt-3">
+            <h3 class="text-xl font-semibold mb-1">ML Disease Detection</h3>
+            <p class="text-gray-300 text-sm mb-3">Model to predict cattle diseases from veterinary datasets.</p>
+            <div class="flex gap-4 mb-4 text-sm">
+              <!-- <a href="https://github.com/your-ml-repo" class="text-gray-300 hover:underline">Code</a> -->
+            </div>
+            <button @click="openIndex === 3 ? openIndex = null : openIndex = 3" class="text-purple-300 hover:text-purple-400 text-sm">
+              <span x-show="openIndex !== 3">▶ More Details</span>
+              <span x-show="openIndex === 3">▼ Less Details</span>
+            </button>
+            <div x-show="openIndex === 3" x-transition class="text-gray-400 mt-3 text-sm space-y-1 overflow-hidden">
+              <ul class="list-disc ml-4">
+                <li>Preprocessing: Label encoding, imputation</li>
+                <li>Used Random Forest, XGBoost</li>
+                <li>93% accuracy on real veterinary data</li>
+                <li>Presented in academic ML symposium</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="bg-[#1b1025] text-white py-20 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl text-white text-center tracking-widest mb-16 uppercase" data-aos="fade-down">Experience Timeline</h2>
+  
+      <div class="relative border-l-4 border-amber-400 pl-6 space-y-14">
+  
+        <!-- Always Visible Entries -->
+        <div class="relative" data-aos="fade-up">
+          <div class="absolute -left-7 top-1 w-12 h-12 bg-red-500 border-4 border-white rounded-full flex items-center justify-center">
+            <i class="fas fa-briefcase text-white text-sm"></i>
+          </div>
+          <div class="bg-white/10 backdrop-blur p-4 rounded-lg shadow">
+            <h3 class="text-xl font-semibold">UI/UX Apprentice</h3>
+            <p class="text-sm text-gray-300">Peopleist India • Dec 2023 – May 2024</p>
+          </div>
+        </div>
+  
+        <div class="relative" data-aos="fade-up" data-aos-delay="100">
+          <div class="absolute -left-7 top-1 w-12 h-12 bg-orange-400 border-4 border-white rounded-full flex items-center justify-center">
+            <i class="fas fa-briefcase text-white text-sm"></i>
+          </div>
+          <div class="bg-white/10 backdrop-blur p-4 rounded-lg shadow">
+            <h3 class="text-xl font-semibold">Research Fellow</h3>
+            <p class="text-sm text-gray-300">IIT Ropar • Jan 2023 – Oct 2023</p>
+          </div>
+        </div>
+  
+        <div class="relative" data-aos="fade-up" data-aos-delay="200">
+          <div class="absolute -left-7 top-1 w-12 h-12 bg-yellow-400 border-4 border-white rounded-full flex items-center justify-center">
+            <img src="/assets/images/logo4.jpeg" class="w-6 h-6" />
+          </div>
+          <div class="bg-white/10 backdrop-blur p-4 rounded-lg shadow">
+            <h3 class="text-xl font-semibold">Team Lead</h3>
+            <p class="text-sm text-gray-300">GDSC BBSBEC • Aug 2021 – Aug 2022</p>
+          </div>
+        </div>
+  
+        <!-- 🔽 Hidden Entries -->
+        <div id="moreExperience" class="hidden space-y-14">
+  
+          <div class="relative" data-aos="fade-up">
+            <div class="absolute -left-7 top-1 w-12 h-12 bg-blue-500 border-4 border-white rounded-full flex items-center justify-center">
+              <img src="/assets/images/logo1.jpeg" class="w-6 h-6" />
+            </div>
+            <div class="bg-white/10 backdrop-blur p-4 rounded-lg shadow">
+              <h3 class="text-xl font-semibold">Membership Chair</h3>
+              <p class="text-sm text-gray-300">ACM BBSBEC • Jul 2021 – Aug 2022</p>
+            </div>
+          </div>
+  
+          <div class="relative" data-aos="fade-up">
+            <div class="absolute -left-7 top-1 w-12 h-12 bg-teal-500 border-4 border-white rounded-full flex items-center justify-center">
+              <img src="/assets/images/logo3.jpeg" class="w-6 h-6" />
+            </div>
+            <div class="bg-white/10 backdrop-blur p-4 rounded-lg shadow">
+              <h3 class="text-xl font-semibold">VP of Finance</h3>
+              <p class="text-sm text-gray-300">Ureka Education • Apr 2021 – Jul 2022</p>
+            </div>
+          </div>
+  
+          <div class="relative" data-aos="fade-up">
+            <div class="absolute -left-7 top-1 w-12 h-12 bg-pink-500 border-4 border-white rounded-full flex items-center justify-center">
+              <i class="fas fa-briefcase text-white text-sm"></i>
+            </div>
+            <div class="bg-white/10 backdrop-blur p-4 rounded-lg shadow">
+              <h3 class="text-xl font-semibold">Sales & Marketing Intern</h3>
+              <p class="text-sm text-gray-300">Ureka Group • 2021</p>
+            </div>
+          </div>
+  
+  
+        </div>
+  
+        <!-- Show More Button -->
+        <div class="text-center mt-10">
+          <button id="showMoreBtn"
+            class="px-6 py-2 bg-amber-500 text-black font-semibold rounded-full hover:bg-amber-400 transition-all">
+            Show More
+          </button>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <!-- Creative Section -->
+
+  <section id="creative-wrapper" x-data="{ showCreative: false }" class="bg-[#1b1025] text-white py-20">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      
+      <!-- Trigger Button -->
+      <button @click="showCreative = true; $nextTick(() => document.getElementById('creative-section').scrollIntoView({ behavior: 'smooth' }))"
+              x-show="!showCreative"
+              class="mb-10 px-6 py-3 bg-amber-500 text-black font-semibold rounded-full hover:bg-amber-400 transition-all">
+        A little something about me 🎨
+      </button>
+  
+      <!-- Creative Section Content -->
+      <div x-show="showCreative" x-transition id="creative-section">
+        <h2 class="text-3xl tracking-widest uppercase text-center mb-12">Creative Corner 🎨</h2>
+        <p class="text-center text-gray-400 max-w-xl mx-auto mb-10">
+          When I’m not writing code, I’m painting tiny canvases! Here are some of my creations —
+          follow my art journey on
+          <a href="https://www.instagram.com/inkandsplashesbyhh?igsh=aXg5ajc5YWVycWpy&utm_source=qr"
+             target="_blank" class="text-amber-400 hover:underline">Instagram</a>.
+        </p>
+  
+        <!-- Painting Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <img src="/assets/images/M1.jpg" data-aos="fade-up" data-aos-delay="100"
+               class="rounded-lg shadow-lg object-cover w-full h-60 hover:scale-105 hover:rotate-1 transition-transform duration-300" alt="Mini Canvas 1">
+          <img src="/assets/images/M2.PNG" data-aos="fade-up" data-aos-delay="200"
+               class="rounded-lg shadow-lg object-cover w-full h-60 hover:scale-105 hover:rotate-1 transition-transform duration-300" alt="Mini Canvas 2">
+          <!-- <img src="/assets/art/3.jpg" data-aos="fade-up" data-aos-delay="300"
+               class="rounded-lg shadow-lg object-cover w-full h-60 hover:scale-105 hover:rotate-1 transition-transform duration-300" alt="Mini Canvas 3"> -->
+        </div>
+  
+        <!-- Instagram Button + Close -->
+        <div class="flex justify-center gap-4 mt-10">
+          <a href="https://www.instagram.com/inkandsplashesbyhh?igsh=aXg5ajc5YWVycWpy&utm_source=qr" target="_blank"
+             class="inline-block bg-amber-500 text-black px-6 py-2 rounded-full font-semibold hover:bg-amber-400 transition">
+            View Full Gallery on Instagram
+          </a>
+  
+          <button @click="showCreative = false"
+                  class="inline-block bg-white/10 border border-white/20 text-white px-6 py-2 rounded-full font-semibold hover:bg-white/20 transition">
+            Close Section ✖
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+<!-- Back to Top Button -->
+<button id="backToTop"
+  onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+  class="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-amber-500 text-black shadow-lg hover:bg-amber-400 hover:scale-110 transition-transform hidden">
+  <i class="fas fa-chevron-up text-lg"></i>
+</button>
+
+  <!-- Footer -->
+<footer class="bg-pink-900 text-white py-8">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+    <p class="text-sm mb-4 md:mb-0">&copy; 2024 Harjas Kaur Ratol. All rights reserved.</p>
+    <div class="flex space-x-6 text-xl">
+      <a href="https://github.com/harjaskaurratol" target="_blank" class="hover:text-gray-300">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/harjaskaurratol/" target="_blank" class="hover:text-gray-300">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="mailto:hratol@asu.edu" class="hover:text-gray-300">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="mailto:hratol@asu.edu" class="hover:text-gray-300">
+        <i class="fab fa-figma"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+  <script src="script.js" defer></script>
+
+</body>
+</html>
+ 
