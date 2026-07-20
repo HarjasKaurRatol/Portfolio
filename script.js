@@ -84,15 +84,18 @@ window.addEventListener("scroll", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   AOS.init({
-    duration: 800, // animation duration
-    easing: 'ease-in-out',
-    once: true,    // animation triggers only once
+    duration: 900,
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 40,
   });
 });
 
 document.addEventListener('DOMContentLoaded', () => {
   const moreBtn = document.getElementById('showMoreBtn');
   const hiddenSection = document.getElementById('moreExperience');
+
+  if (!moreBtn || !hiddenSection) return;
 
   moreBtn.addEventListener('click', () => {
     hiddenSection.classList.toggle('hidden');
@@ -101,4 +104,26 @@ document.addEventListener('DOMContentLoaded', () => {
       ? 'Show More'
       : 'Show Less';
   });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Apply consistent staggered delays to section cards for smoother reveal rhythm.
+  const staggerSelectors = [
+    '#skills .skill-card',
+    '#soft-skills .group',
+    '#projects .grid > div',
+    '#experience #moreExperience .relative'
+  ];
+
+  staggerSelectors.forEach(selector => {
+    document.querySelectorAll(selector).forEach((element, index) => {
+      if (!element.getAttribute('data-aos')) {
+        element.setAttribute('data-aos', 'fade-up');
+      }
+      element.setAttribute('data-aos-delay', String((index % 6) * 80));
+    });
+  });
+
+  // AOS already scanned the DOM before these attributes were added; make it look again.
+  if (window.AOS) AOS.refreshHard();
 });
