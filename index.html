@@ -132,8 +132,9 @@
     <div class="relative max-w-7xl mx-auto px-6 py-32 lg:py-40 flex flex-col lg:flex-row items-center justify-between gap-16 z-10">
       <!-- Profile Image Block on Left -->
       <div class="w-full lg:w-1/2 flex justify-center lg:justify-start" data-aos="fade-right">
-        <div class="profile-ring w-72 h-72 rounded-full overflow-hidden border">
-          <img src="assets/images/profile.jpg" alt="Profile Picture" class="w-full h-full object-cover" style="object-position: 50% 38%;">
+        <div class="profile-ring profile-reveal w-72 h-72 rounded-full overflow-hidden border" id="profileReveal">
+          <img src="assets/images/Original%20Image.png" alt="Profile Picture" class="profile-reveal-img w-full h-full object-cover" style="object-position: 50% 50%;">
+          <canvas class="profile-reveal-canvas" id="profileRevealCanvas"></canvas>
         </div>
       </div>
 
